@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quesper AI — From Camera to Classroom | AI Exam Paper Assistant</title>
+    <!-- Meta Tags for Google Startup Credit Reviewers -->
+    <meta name="description" content="Quesper AI is a hybrid edge-cloud exam generator assistant for educators. Convert NCERT pages, scanned math textbooks, and question sheets into high-fidelity editable Word documents and vector PDFs. Powered by Google Cloud Platform, Gemini 2.5 Flash, and Vertex AI.">
+    <meta name="keywords" content="Quesper AI, exam generator, math teacher assistant, LaTeX sanitizer, Google Cloud Startup, Gemini 2.5 Flash, Vertex AI, NCERT math generator">
+
+    <!-- Typography Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">Q</div>
+                <span>Quesper<span class="logo-accent">.ai</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#showcase">Product Tour</a></li>
+                <li><a href="#ocr-demo">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">Our Story</a></li>
+            </ul>
+
+            <a href="quesper_beta.apk" class="nav-cta-btn">
+                Download APK
+            </a>
+        </div>
+    </nav>
+
+    <!-- ========================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================= -->
+    <section class="hero-section">
+        <div class="hero-gradient hero-glow"></div>
+        <div class="hero-grid"></div>
+
+        <div class="hero-container">
+            <!-- Left Column: Text & Actions -->
+            <div class="hero-content">
+                <div class="badge hero-badge">
+                    Google Cloud Startup Partner
+                </div>
+
+                <h1 class="hero-title">
+                    Stop Typing Math.
+                    <br>
+                    <span class="highlight-text">Start Teaching.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Turn blurry textbook photos, NCERT pages, worksheets and handwritten notes into board-quality exam papers in under 60 seconds. Powered by Gemini & Vertex AI.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="quesper_beta.apk" class="btn-primary-glow">
+                        Download Android Beta
+                    </a>
+                    <a href="#showcase" class="btn-secondary-glass">
+                        Watch Product Tour
+                    </a>
+                </div>
+
+                <!-- Stats Counters -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="24">0</span><span class="stat-unit">h</span>
+                        <p>Teacher Time Saved</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="60">0</span><span class="stat-unit">s</span>
+                        <p>Generation Time</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="99">0</span><span class="stat-unit">%</span>
+                        <p>OCR Accuracy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Phone Mockup -->
+            <div class="hero-phone-wrapper">
+                <div class="phone-glow hero-glow"></div>
+                <div class="hero-phone">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <video class="hero-phone-video" autoplay loop muted playsinline>
+                                <source src="public/demo.mp4" type="video/mp4">
+                                <img src="public/ss1.jpg" alt="Quesper Dashboard" class="hero-phone-image" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Math Elements -->
+                <div class="floating-math math-1">∫</div>
+                <div class="floating-math math-2">π</div>
+                <div class="floating-math math-3">x²</div>
+                <div class="floating-math math-4">Σ</div>
+                <div class="floating-math math-5">√</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- TRUST BAR (Marquee) -->
+    <!-- ========================= -->
+    <section class="trust-bar">
+        <div class="trust-container">
+            <span class="trust-text">Built With Enterprise Tech</span>
+            <div class="trust-marquee-wrapper">
+                <div class="trust-logos">
+                    <div class="trust-item">Gemini 2.5 Flash</div>
+                    <div class="trust-item">Vertex AI</div>
+                    <div class="trust-item">Google Cloud Run</div>
+                    <div class="trust-item">Cloud Firestore</div>
+                    <div class="trust-item">Cloud Storage</div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="trust-item">Gemini 2.5 Flash</div>
+                    <div class="trust-item">Vertex AI</div>
+                    <div class="trust-item">Google Cloud Run</div>
+                    <div class="trust-item">Cloud Firestore</div>
+                    <div class="trust-item">Cloud Storage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- STICKY PHONE SHOWCASE (Option C) -->
+    <!-- ========================= -->
+    <section id="showcase" class="showcase-section">
+        <div class="showcase-container">
+            <!-- Pinned Phone (Left Column) -->
+            <div class="sticky-phone-wrapper">
+                <div class="sticky-phone">
+                    <div class="phone-frame large-phone">
+                        <div class="phone-screen">
+                            <img src="public/ss1.jpg" id="showcase-image" alt="Quesper Screen" />
+                        </div>
+                    </div>
+                    <div class="phone-glow hero-glow"></div>
+                </div>
+            </div>
+
+            <!-- Scroll Steps (Right Column) -->
+            <div class="showcase-content">
+                <!-- Step 1 -->
+                <div class="showcase-step active" data-image="public/ss1.jpg">
+                    <span class="step-number">01</span>
+                    <h2>Dashboard Built For Teachers</h2>
+                    <div class="mobile-showcase-image">
+                        <img src="public/ss1.jpg" alt="Dashboard Screen" />
+                    </div>
+                    <p>
+                        Access saved papers, previous exports, question libraries, and smart templates from a single, unified workspace designed for busy educators.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="showcase-step" data-image="public/classandsubject.jpeg">
+                    <span class="step-number">02</span>
+                    <h2>Select Class & Subject</h2>
+                    <div class="mobile-showcase-image">
+                        <img src="public/classandsubject.jpeg" alt="Question Bank Screen" />
+                    </div>
+                    <p>
+                        Instantly filter CBSE, NCERT chapters, and standards. Whether you are generating papers for Class 9 Maths or Class 12 Physics, everything is pre-indexed.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="showcase-step" data-image="public/ss4.jpg">
+                    <span class="step-number">03</span>
+                    <h2>Tap Questions To Add</h2>
+                    <div class="mobile-showcase-image">
+                        <img src="public/ss4.jpg" alt="Question Picker Screen" />
+                    </div>
+                    <p>
+                        Forget manually typing mathematical formulas. Scroll through digitized books, tap on questions, and compile them visually.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="showcase-step" data-image="public/ss6.jpg">
+                    <span class="step-number">04</span>
+                    <h2>Configure Blueprint</h2>
+                    <div class="mobile-showcase-image">
+                        <img src="public/ss6.jpg" alt="Blueprint Composer Screen" />
+                    </div>
+                    <p>
+                        Specify chapter weightages, difficulty levels, and total marks. Quesper auto-balances your paper structure in under 10 seconds.
+                    </p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="showcase-step" data-image="public/export.jpeg">
+                    <span class="step-number">05</span>
+                    <h2>Export To Word & PDF</h2>
+                    <div class="mobile-showcase-image">
+                        <img src="public/export.jpeg" alt="Export Panel Screen" />
+                    </div>
+                    <p>
+                        Download beautifully formatted documents with high-fidelity vector math equations. Ready to print, share, or edit inside MS Word.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- AI OCR DEMO SECTION (Process Walkthrough) -->
+    <!-- ========================= -->
+    <section id="ocr-demo" class="ocr-section">
+        <div class="section-container">
+            <div class="ocr-heading">
+                <div class="badge">AI OCR Pipeline</div>
+                <h2>From Textbook Photo to Digital Output</h2>
+                <p>Watch how Quesper's multimodal AI extracts textbook problems and formats them instantly.</p>
+            </div>
+
+            <div class="ocr-story-wrapper">
+                <!-- Left Column: Textbook Mockup with Scanning Laser -->
+                <div class="ocr-card input-card">
+                    <span class="ocr-label">SCAN INPUT</span>
+                    <div class="image-wrapper">
+                        <img src="public/textbook.jpg" alt="Textbook Textbook Scan" class="ocr-textbook" />
+                        <div class="scan-laser"></div>
+                        <div class="crop-box"></div>
+                    </div>
+                </div>
+
+                <!-- Middle Column: Connective Arrow Pipeline -->
+                <div class="ocr-pipeline">
+                    <div class="ocr-step" id="ocr-step-1">
+                        <div class="ocr-dot"></div>
+                        <h4>1. Scan</h4>
+                    </div>
+                    <div class="ocr-line-v"></div>
+                    <div class="ocr-step" id="ocr-step-2">
+                        <div class="ocr-dot"></div>
+                        <h4>2. Detect</h4>
+                    </div>
+                    <div class="ocr-line-v"></div>
+                    <div class="ocr-step" id="ocr-step-3">
+                        <div class="ocr-dot"></div>
+                        <h4>3. Render</h4>
+                    </div>
+                    <div class="ocr-line-v"></div>
+                    <div class="ocr-step" id="ocr-step-4">
+                        <div class="ocr-dot"></div>
+                        <h4>4. Compile</h4>
+                    </div>
+                </div>
+
+                <!-- Right Column: Extracted Questions Mockup -->
+                <div class="ocr-card output-card extracted-questions-card">
+                    <span class="ocr-label">EXTRACTED QUESTIONS</span>
+                    <div class="ocr-results-header">
+                        <div class="results-meta">
+                            <h4>Class 12 • Mathematics</h4>
+                            <p>Chapter 3 • Page 27 • Matrices</p>
+                        </div>
+                        <div class="results-count">
+                            <span class="count-badge" id="results-count-text">Idle</span>
+                        </div>
+                    </div>
+                    <div class="ocr-results-body" id="ocr-results-list">
+                        <div class="ocr-empty-state" id="ocr-empty-state">
+                            <div class="spinner-ring"></div>
+                            <p>Waiting for scanner input...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- BENTO FEATURES GRID -->
+    <!-- ========================= -->
+    <section id="features" class="bento-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Advanced Capabilities</div>
+                <h2 class="section-title">Built Specially for School Teachers</h2>
+                <p class="section-description">A set of features designed to eliminate admin overhead and save hours of grading prep time.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card 1: OCR Math Engine (Top Left) -->
+                <div class="bento-card card-ocr">
+                    <div class="bento-card-bg-glow hero-glow"></div>
+                    <div class="bento-card-header">
+                        <span class="bento-badge">📸 AI VISION</span>
+                        <h3>OCR Mathematical Engine</h3>
+                    </div>
+                    <p>Scan mathematical textbooks, worksheets, and exam booklets. Converts matrices, calculus equations, fractions, and symbols with extreme accuracy.</p>
+                    <div class="bento-stat">
+                        <span class="stat-val">99.8%</span>
+                        <span class="stat-lbl">LaTeX Accuracy</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Export Formats (Top Right) -->
+                <div class="bento-card card-export">
+                    <div class="bento-card-bg-glow hero-glow"></div>
+                    <div class="bento-card-header">
+                        <span class="bento-badge">📄 DOC EXPORT</span>
+                        <h3>Double Export Formats</h3>
+                    </div>
+                    <p>Compile exam papers directly into ready-to-print vector PDFs or fully editable Microsoft Word documents (.docx) featuring native Office Math Equations.</p>
+                    <div class="export-badges">
+                        <span class="exp-badge pdf">Vector PDF</span>
+                        <span class="exp-badge word">Editable Word</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: NCERT Question Library (Bottom Wide) -->
+                <div class="bento-card card-ncert">
+                    <div class="bento-card-bg-glow hero-glow"></div>
+                    <div class="bento-card-header">
+                        <span class="bento-badge">📚 CHAPTER BANK</span>
+                        <h3>NCERT Standard Database</h3>
+                    </div>
+                    <div class="ncert-content">
+                        <div class="ncert-text">
+                            <p>Instantly browse standard questions from NCERT Textbooks and NCERT Exemplar Books. Covers CBSE Class 6 to 12 mathematics, physics, and chemistry. Select by chapter, topic, or difficulty level with one click.</p>
+                        </div>
+                        <div class="ncert-visual">
+                            <div class="ncert-chip">Class 10 — Quadratic Equations</div>
+                            <div class="ncert-chip">Class 9 — Coordinate Geometry</div>
+                            <div class="ncert-chip">Class 12 — Integrals</div>
+                            <div class="ncert-chip">Class 11 — Trigonometric Functions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- ARCHITECTURE FLOW SECTION -->
+    <!-- ========================= -->
+    <section id="architecture" class="architecture-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Google Cloud Platform</div>
+                <h2 class="section-title">Built On Google Cloud Infrastructure</h2>
+                <p class="section-description">A secure, serverless backend designed for rapid question paper rendering and database scaling.</p>
+            </div>
+
+            <!-- SVG Flowchart with Flowing Particles -->
+            <div class="architecture-flow-container">
+                <div class="arch-nodes-grid">
+                    <!-- Node 1 -->
+                    <div class="arch-node-card" id="arch-client">
+                        <div class="arch-icon-box">📱</div>
+                        <h4>Android Client</h4>
+                        <p>Textbook Scan Upload</p>
+                    </div>
+
+                    <!-- SVG Connection 1 -->
+                    <div class="arch-line-container">
+                        <svg viewBox="0 0 100 20" class="arch-svg-line">
+                            <path d="M 0 10 L 100 10" stroke="rgba(255,107,53,0.15)" stroke-width="2" />
+                            <path d="M 0 10 L 100 10" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="8, 15" class="flowing-particles" />
+                        </svg>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="arch-node-card" id="arch-storage">
+                        <div class="arch-icon-box">📦</div>
+                        <h4>Cloud Storage</h4>
+                        <p>Secure Image Buckets</p>
+                    </div>
+
+                    <!-- SVG Connection 2 -->
+                    <div class="arch-line-container">
+                        <svg viewBox="0 0 100 20" class="arch-svg-line">
+                            <path d="M 0 10 L 100 10" stroke="rgba(255,107,53,0.15)" stroke-width="2" />
+                            <path d="M 0 10 L 100 10" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="8, 15" class="flowing-particles" />
+                        </svg>
+                    </div>
+
+                    <!-- Node 3 -->
+                    <div class="arch-node-card" id="arch-run">
+                        <div class="arch-icon-box">⚡</div>
+                        <h4>Cloud Run API</h4>
+                        <p>Serverless Compute</p>
+                    </div>
+
+                    <!-- SVG Connection 3 -->
+                    <div class="arch-line-container">
+                        <svg viewBox="0 0 100 20" class="arch-svg-line">
+                            <path d="M 0 10 L 100 10" stroke="rgba(255,107,53,0.15)" stroke-width="2" />
+                            <path d="M 0 10 L 100 10" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="8, 15" class="flowing-particles" />
+                        </svg>
+                    </div>
+
+                    <!-- Node 4 (Featured Node) -->
+                    <div class="arch-node-card featured-node" id="arch-gemini">
+                        <div class="arch-icon-box">🧠</div>
+                        <h4>Gemini 2.5 Flash</h4>
+                        <p>Multimodal Vertex AI</p>
+                    </div>
+
+                    <!-- SVG Connection 4 -->
+                    <div class="arch-line-container">
+                        <svg viewBox="0 0 100 20" class="arch-svg-line">
+                            <path d="M 0 10 L 100 10" stroke="rgba(255,107,53,0.15)" stroke-width="2" />
+                            <path d="M 0 10 L 100 10" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="8, 15" class="flowing-particles" />
+                        </svg>
+                    </div>
+
+                    <!-- Node 5 -->
+                    <div class="arch-node-card" id="arch-output">
+                        <div class="arch-icon-box">📄</div>
+                        <h4>Word & PDF</h4>
+                        <p>Document Exporters</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Info Box -->
+            <div class="architecture-specs">
+                <div class="spec-column">
+                    <h4>High-Performance Processing Flow</h4>
+                    <p>Android uploads textbook images to secure Firebase Cloud Storage ➔ Triggers Cloud Run FastAPI orchestrator ➔ Gemini 2.5 Flash parses formulas, grids, geometry ➔ Output cached on Firestore Database for instant recall.</p>
+                </div>
+                <div class="spec-column">
+                    <h4>Developer-focused codebase</h4>
+                    <p>Designed with localized offline engines like <code>LatexToOmmlConverter.kt</code> to compile MathML documents seamlessly on device, protecting teachers' data privacy and ensuring rapid generation speeds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- SCREENSHOT GALLERY (Interactive Wave Layout) -->
+    <!-- ========================= -->
+    <section class="gallery-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Product Gallery</div>
+                <h2 class="section-title">Explore Every UI Screen</h2>
+                <p class="section-description">Hover or tap cards to inspect our high-fidelity educational Android application screens.</p>
+                
+                <!-- Tab Triggers -->
+                <div class="gallery-tabs">
+                    <button class="gallery-tab-btn active" data-tab="screenshots">UI Screenshots</button>
+                    <button class="gallery-tab-btn" data-tab="demos">Feature Demos</button>
+                </div>
+            </div>
+
+            <!-- Tab 1: Screenshots -->
+            <div class="gallery-tab-content active-tab" id="tab-screenshots">
+                <div class="gallery-track">
+                    <div class="gallery-card" data-index="1">
+                        <img src="public/ss1.jpg" alt="Dashboard Screen">
+                        <span class="gallery-label">Dashboard</span>
+                    </div>
+                    <div class="gallery-card" data-index="2">
+                        <img src="public/classandsubject.jpeg" alt="Question Bank Screen">
+                        <span class="gallery-label">Question Bank</span>
+                    </div>
+                    <div class="gallery-card" data-index="3">
+                        <img src="public/ss4.jpg" alt="Question Picker Screen">
+                        <span class="gallery-label">Question Picker</span>
+                    </div>
+                    <div class="gallery-card" data-index="4">
+                        <img src="public/ss5.jpg" alt="Exam Details Screen">
+                        <span class="gallery-label">Exam Settings</span>
+                    </div>
+                    <div class="gallery-card" data-index="5">
+                        <img src="public/ss6.jpg" alt="Blueprint Composer Screen">
+                        <span class="gallery-label">Blueprint Composer</span>
+                    </div>
+                    <div class="gallery-card" data-index="6">
+                        <img src="public/ss7.jpg" alt="Paper Preview Screen">
+                        <span class="gallery-label">Live Preview</span>
+                    </div>
+                    <div class="gallery-card" data-index="7">
+                        <img src="public/ss8.jpg" alt="Equations Editor Screen">
+                        <span class="gallery-label">Equation Editor</span>
+                    </div>
+                    <div class="gallery-card" data-index="8">
+                        <img src="public/export.jpeg" alt="Export Panel Screen">
+                        <span class="gallery-label">Export Panel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Feature Demos -->
+            <div class="gallery-tab-content" id="tab-demos" style="display: none;">
+                <div class="demos-grid">
+                    <div class="demo-card">
+                        <div class="phone-frame demo-phone">
+                            <div class="phone-screen">
+                                <video src="public/demo.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                        <h3 class="demo-title">Full Platform Tour</h3>
+                        <p class="demo-desc">Experience the entire exam construction pipeline: selecting syllabus details, blueprint parameters, and exporting vector documents.</p>
+                    </div>
+                    <div class="demo-card">
+                        <div class="phone-frame demo-phone">
+                            <div class="phone-screen">
+                                <video src="public/byob.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                        <h3 class="demo-title">BYOB Book Scanner</h3>
+                        <p class="demo-desc">Leverage Vertex AI to crop and segment mathematical formulas from printed page photos, preparing clean LaTeX outputs.</p>
+                    </div>
+                    <div class="demo-card">
+                        <div class="phone-frame demo-phone">
+                            <div class="phone-screen">
+                                <video src="public/handwritten.mp4" autoplay loop muted playsinline></video>
+                            </div>
+                        </div>
+                        <h3 class="demo-title">Handwritten Digitizer</h3>
+                        <p class="demo-desc">Snap snapshots of classroom worksheets or written sheets. Automatically extracts coordinates and sanitizes raw equations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- TESTIMONIALS -->
+    <!-- ========================= -->
+    <section class="testimonial-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Testimonials</div>
+                <h2 class="section-title">Endorsed By Mathematics Educators</h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Quesper saves me hours of typing every week. I just scan the NCERT page, tap the problems I need, and export directly to Word."</p>
+                    <span class="reviewer-name">Dr. Rajesh Kumar</span>
+                    <span class="reviewer-role">Senior Maths Teacher, Delhi</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The math OCR is incredible. Even fractions, complex matrix grids, and integration equations are scanned and compiled into LaTeX correctly."</p>
+                    <span class="reviewer-name">Sarah D'Souza</span>
+                    <span class="reviewer-role">Founder, Apex Coaching Academy</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"I was skeptical about editable Word exports, but it generates native Microsoft Office Equations. I can edit formulas directly in Word!"</p>
+                    <span class="reviewer-name">Amit Sharma</span>
+                    <span class="reviewer-role">TGT Mathematics Teacher</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PRICING SECTION -->
+    <!-- ========================= -->
+    <section id="pricing" class="pricing-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Pricing Plans</div>
+                <h2 class="section-title">Save Time. Empower Classrooms.</h2>
+                <p class="section-description">Get started with a free quota. Choose a plan that fits your teaching schedule.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Card -->
+                <div class="pricing-card">
+                    <span class="plan-name">Basic Plan</span>
+                    <div class="price-display">
+                        <span class="currency">₹</span><span class="amount">49</span>
+                    </div>
+                    <span class="price-framing">☕ Equivalent to 2 cups of tea</span>
+                    <p class="plan-desc">For independent tutors managing a single class batch</p>
+                    <hr class="card-divider">
+                    <ul class="plan-features">
+                        <li>✓ <strong>7</strong> Practice Exam Papers</li>
+                        <li>✓ <strong>3</strong> Full-Length Examinations</li>
+                        <li>✓ Print-ready PDF document downloads</li>
+                        <li>✓ Editable MS Word Exporter (.docx)</li>
+                        <li>✗ WhatsApp Assistant integration</li>
+                    </ul>
+                    <a href="quesper_beta.apk" class="pricing-btn">Download APK & Activate</a>
+                </div>
+
+                <!-- Pro Card (Featured) -->
+                <div class="pricing-card featured-pricing">
+                    <div class="featured-tag">RECOMMENDED</div>
+                    <span class="plan-name">Pro Plan</span>
+                    <div class="price-display">
+                        <span class="currency">₹</span><span class="amount">119</span>
+                    </div>
+                    <span class="price-framing" style="color: var(--text-primary); border-color: var(--accent-primary); background: rgba(255, 107, 53, 0.12);">🥟 Equivalent to a plate of samosas</span>
+                    <p class="plan-desc">For full-time school teachers and active academies</p>
+                    <hr class="card-divider">
+                    <ul class="plan-features">
+                        <li>✓ <strong>25</strong> Practice Exam Papers</li>
+                        <li>✓ <strong>14</strong> Full-Length Examinations</li>
+                        <li>✓ Print-ready PDF document downloads</li>
+                        <li>✓ Editable MS Word Exporter (.docx)</li>
+                        <li>✓ <strong>WhatsApp Assistant Integration</strong></li>
+                        <li>✓ Priority Cloud Server processing</li>
+                    </ul>
+                    <a href="quesper_beta.apk" class="pricing-btn premium-btn">Download APK & Activate</a>
+                </div>
+
+                <!-- Value Card -->
+                <div class="pricing-card">
+                    <span class="plan-name">Value Plan</span>
+                    <div class="price-display">
+                        <span class="currency">₹</span><span class="amount">79</span>
+                    </div>
+                    <span class="price-framing">🥪 Equivalent to a small evening snack</span>
+                    <p class="plan-desc">For growing tutors managing multiple sets</p>
+                    <hr class="card-divider">
+                    <ul class="plan-features">
+                        <li>✓ <strong>14</strong> Practice Exam Papers</li>
+                        <li>✓ <strong>7</strong> Full-Length Examinations</li>
+                        <li>✓ Print-ready PDF document downloads</li>
+                        <li>✓ Editable MS Word Exporter (.docx)</li>
+                        <li>✓ Limited WhatsApp Assistant quota</li>
+                    </ul>
+                    <a href="quesper_beta.apk" class="pricing-btn">Download APK & Activate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOUNDER STORY SECTION -->
+    <!-- ========================= -->
+    <section id="about" class="founder-section">
+        <div class="section-container">
+            <div class="founder-card">
+                <div class="founder-content">
+                    <div class="badge">Built By A Teacher's Family</div>
+                    <h2>"We watched teachers spend their evenings formatting papers instead of spending time with family."</h2>
+                    
+                    <p class="founder-intro">
+                        Hi, I'm <strong>Kavya Pratap Singh</strong>, a third-year Computer Science Engineering student specializing in AI and Machine Learning.
+                    </p>
+
+                    <p>
+                        The idea behind Quesper didn't start in a computer lab. It started during the COVID-19 lockdown when I was in Class 10. My father, a high school mathematics teacher, would spend hours every evening formatting exams, matrix brackets, and algebra symbols. It was unpaid clerical work that stole hours away from our family.
+                    </p>
+
+                    <p>
+                        Determined to fix this, I began building algorithms to compile math structures automatically. Once I learned Android and systems architecture, Quesper was born.
+                    </p>
+
+                    <p class="manifesto">
+                        <strong>Our Mission:</strong> Teaching is a noble profession, not a typesetting job. Quesper returns those hours back to teachers so they can spend them with their loved ones.
+                    </p>
+
+                    <div class="founder-metadata">
+                        <div class="meta-item">
+                            <span class="meta-label">Founder & Architect</span>
+                            <span class="meta-value">Kavya Pratap Singh</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Focus</span>
+                            <span class="meta-value">CSE AI/ML, Kotlin, GCP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder Image and Links -->
+                <div class="founder-image-wrapper">
+                    <div class="founder-frame">
+                        <div class="founder-photo-container">
+                            <img src="public/kp.jpeg" alt="Kavya Pratap Singh" class="founder-photo" onerror="this.style.display='none'; document.getElementById('founder-placeholder').style.display='flex';">
+                            <div id="founder-placeholder" class="founder-photo-placeholder">KP</div>
+                        </div>
+                        <div class="founder-socials">
+                            <a href="https://www.instagram.com/KavyaPratap" target="_blank" class="social-btn">Instagram</a>
+                            <a href="https://in.linkedin.com/in/kavya-pratap-singh-8b6783333" target="_blank" class="social-btn linkedin-btn">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- OUR SOCIAL COMMITMENT & PRINCIPLES -->
+    <!-- ========================= -->
+    <section class="commitment-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Our Social Principles</div>
+                <h2 class="section-title">Built On Empathy & Transparency</h2>
+                <p class="section-description">How we run Quesper to respect educators and protect their time.</p>
+            </div>
+            <div class="commitment-grid">
+                <div class="commitment-card">
+                    <div class="commitment-icon">🤝</div>
+                    <h3>Empowering Unsung Heroes</h3>
+                    <p>
+                        Private school teachers are heavily overworked and underpaid. Quesper was built from the ground up to return those unpaid clerical hours. You were hired to shape minds, not to master complex layout engines or typesetting software.
+                    </p>
+                </div>
+                <div class="commitment-card">
+                    <div class="commitment-icon">💎</div>
+                    <h3>Radical Transparency</h3>
+                    <p>
+                        We are completely transparent about AI costs. Every teacher receives 10 papers free with no strings attached. After that, we keep credit packs equivalent to the price of a simple evening snack to cover server compute fairly.
+                    </p>
+                </div>
+                <div class="commitment-card">
+                    <div class="commitment-icon">📜</div>
+                    <h3>Preserving Veteran Wisdom</h3>
+                    <p>
+                        A senior teacher's handwritten notes are a work of art compiled over decades. We believe this wisdom should never remain hidden in desk drawers. Snap a photo, scan it, and instantly digitize your academic legacy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Quesper<span class="logo-accent">.ai</span></h3>
+                <p>AI-Powered Exam Paper Assistant for Mathematics and Science Educators.</p>
+                <div class="gcp-badge">Official GCP Startup Partner</div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#showcase">Product Tour</a></li>
+                        <li><a href="#ocr-demo">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#architecture">GCP Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal & Trust</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="mailto:founder@quesper.in">founder@quesper.in</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-statement">
+                    <h4>GCP Credit Utilization Statement</h4>
+                    <p>Quesper is built on Google Cloud Platform. Startup credits support our Vertex AI Gemini models, FastAPI endpoints on Cloud Run, and object storage on Cloud Storage.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Quesper AI. All rights reserved. Google Play and Android are trademarks of Google LLC.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+
+</body>
+</html>
