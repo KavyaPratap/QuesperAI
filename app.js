@@ -649,3 +649,183 @@ tabButtons.forEach(btn => {
 window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
+
+/* =======================================================
+   FAQ ACCORDION & KEYWORD SEARCH ENGINE
+   ======================================================= */
+// FAQ Accordion Toggle
+const faqItems = document.querySelectorAll(".faq-item");
+faqItems.forEach(item => {
+    const trigger = item.querySelector(".faq-trigger");
+    trigger.addEventListener("click", () => {
+        const isActive = item.classList.contains("faq-active");
+        
+        // Close all other FAQs
+        faqItems.forEach(otherItem => {
+            otherItem.classList.remove("faq-active");
+        });
+        
+        // Toggle current one
+        if (!isActive) {
+            item.classList.add("faq-active");
+        }
+        
+        // Refresh ScrollTrigger because heights changed
+        setTimeout(() => {
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+            }
+        }, 400);
+    });
+});
+
+// Interactive Search Database (100+ Keywords)
+const searchInput = document.getElementById("keyword-search-input");
+const clearBtn = document.getElementById("search-clear-btn");
+const statsInfo = document.getElementById("search-stats-info");
+const chips = document.querySelectorAll(".keyword-chip");
+const resultsOverlay = document.getElementById("search-results-overlay");
+const resultsList = document.getElementById("search-results-list");
+const toggleKeywordsBtn = document.getElementById("toggle-keywords-btn");
+const keywordsGridWrapper = document.getElementById("keywords-grid-wrapper");
+
+// Toggle Keywords Grid
+if (toggleKeywordsBtn && keywordsGridWrapper) {
+    toggleKeywordsBtn.addEventListener("click", () => {
+        const isCollapsed = keywordsGridWrapper.classList.contains("collapsed");
+        if (isCollapsed) {
+            keywordsGridWrapper.classList.remove("collapsed");
+            toggleKeywordsBtn.classList.add("active");
+        } else {
+            keywordsGridWrapper.classList.add("collapsed");
+            toggleKeywordsBtn.classList.remove("active");
+        }
+        
+        // Refresh ScrollTrigger because page height shifts
+        setTimeout(() => {
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.refresh();
+            }
+        }, 500);
+    });
+}
+
+// Mock Database of CBSE/NCERT papers to simulate matching results
+const mockQuestionDatabase = [
+    { title: "Class 12 Calculus and Integration Practice Paper", category: "Maths", classVal: "Class 12", type: "Full Paper", desc: "Full marks test with 15 questions, covers indefinite integrals, substitution method, and definite integrals with limits." },
+    { title: "Class 10 Quadratic Equations Chapter Test", category: "Maths", classVal: "Class 10", type: "Chapter Test", desc: "Standard evaluation paper for roots extraction, discriminant, and word problems matching board pattern." },
+    { title: "Class 12 Matrices and Determinants Quiz", category: "Maths", classVal: "Class 12", type: "Unit Test", desc: "10 core problems covering matrix multiplication, inverse matrices, and Cramer's rule calculations." },
+    { title: "Class 11 Trigonometric Functions Test Sheet", category: "Maths", classVal: "Class 11", type: "Full Paper", desc: "Formulas evaluation sheet including principal value and trigonometric identities problems." },
+    { title: "Class 12 Physics Magnetism & Matter Blueprint", category: "Physics", classVal: "Class 12", type: "Blueprint", desc: "Customized blueprint with chapter weightage, difficulty balancing, and formula guides." },
+    { title: "Class 12 Chemistry Organic Chemistry Mock Exam", category: "Chemistry", classVal: "Class 12", type: "Full Paper", desc: "NCERT-aligned exam containing haloalkanes, alcohols, and carboxylic acids mechanisms." },
+    { title: "Class 9 Coordinate Geometry Worksheet", category: "Maths", classVal: "Class 9", type: "Worksheet", desc: "Print-ready worksheet for Cartesian plane, plotting coordinates, and distance formula." },
+    { title: "Class 8 Rational Numbers Practice Set", category: "Maths", classVal: "Class 8", type: "Chapter Test", desc: "Basic maths question paper covering properties, representation on number line, and operations." }
+];
+
+if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query.length > 0) {
+            clearBtn.style.display = "block";
+            
+            // Auto expand keywords grid when searching
+            if (keywordsGridWrapper && keywordsGridWrapper.classList.contains("collapsed")) {
+                keywordsGridWrapper.classList.remove("collapsed");
+                if (toggleKeywordsBtn) toggleKeywordsBtn.classList.add("active");
+            }
+            
+            let matchedChips = 0;
+            // 1. Filter Chips
+            chips.forEach(chip => {
+                const keywords = chip.getAttribute("data-keywords").toLowerCase();
+                const text = chip.textContent.toLowerCase();
+                
+                if (keywords.includes(query) || text.includes(query)) {
+                    chip.classList.add("highlighted");
+                    chip.classList.remove("dimmed");
+                    matchedChips++;
+                } else {
+                    chip.classList.remove("highlighted");
+                    chip.classList.add("dimmed");
+                }
+            });
+            
+            // 2. Filter Mock Database & Show Results
+            const filteredResults = mockQuestionDatabase.filter(item => {
+                return item.title.toLowerCase().includes(query) ||
+                       item.desc.toLowerCase().includes(query) ||
+                       item.category.toLowerCase().includes(query) ||
+                       item.classVal.toLowerCase().includes(query);
+            });
+            
+            statsInfo.innerHTML = `Found <span class="highlight-text">${matchedChips}</span> keyword matches and <span class="highlight-text">${filteredResults.length}</span> question papers`;
+            
+            if (filteredResults.length > 0) {
+                resultsOverlay.style.display = "block";
+                resultsList.innerHTML = filteredResults.map(item => `
+                    <div class="search-result-item" onclick="alert('Quesper AI Beta: Download the Android APK to generate and edit this paper!')">
+                        <div class="result-tag-row">
+                            <span class="result-class-badge">${item.classVal} • ${item.category}</span>
+                            <span>${item.type}</span>
+                        </div>
+                        <h6>${item.title}</h6>
+                        <p>${item.desc}</p>
+                    </div>
+                `).join('');
+            } else {
+                resultsOverlay.style.display = "block";
+                resultsList.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 30px; color: var(--text-muted);">
+                        <p>No direct question paper matches found in local index. Try searching "Integration", "Class 12", "OCR" or click the chips to explore.</p>
+                    </div>
+                `;
+            }
+        } else {
+            resetSearch();
+        }
+    });
+    
+    clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        resetSearch();
+    });
+    
+    // Clicking a chip triggers search for that tag
+    chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+            searchInput.value = chip.textContent;
+            searchInput.dispatchEvent(new Event("input"));
+            searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+}
+
+function resetSearch() {
+    if (searchInput) {
+        searchInput.value = "";
+    }
+    clearBtn.style.display = "none";
+    resultsOverlay.style.display = "none";
+    resultsList.innerHTML = "";
+    statsInfo.innerHTML = `Showing all <span class="highlight-text">100+</span> exam generator keywords`;
+    
+    // Collapse keywords wrapper on reset search
+    if (keywordsGridWrapper) {
+        keywordsGridWrapper.classList.add("collapsed");
+        if (toggleKeywordsBtn) toggleKeywordsBtn.classList.remove("active");
+    }
+    
+    chips.forEach(chip => {
+        chip.classList.remove("highlighted");
+        chip.classList.remove("dimmed");
+    });
+    
+    // Refresh ScrollTrigger
+    setTimeout(() => {
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
+    }, 500);
+}
+

@@ -4,12 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quesper AI — From Camera to Classroom | AI Exam Paper Assistant</title>
-    <!-- Meta Tags for Google Startup Credit Reviewers -->
+    <title>Quesper AI — AI Question Paper Generator | Maths Question Paper Making & AI Exam Creator</title>
+    <!-- Meta Tags for Google Startup Credit Reviewers & Robust SEO -->
     <meta name="description"
-        content="Quesper AI is a hybrid edge-cloud exam generator assistant for educators. Convert NCERT pages, scanned math textbooks, and question sheets into high-fidelity editable Word documents and vector PDFs. Powered by Google Cloud Platform, Gemini 2.5 Flash, and Vertex AI.">
+        content="Quesper AI is the premier hybrid edge-cloud question paper generator and exam creator assistant for school teachers. Convert NCERT books, scanned maths textbooks, handwritten worksheets, and question papers into editable MS Word documents and vector PDFs. Powered by Google Cloud, Gemini, and Vertex AI.">
     <meta name="keywords"
-        content="Quesper AI, exam generator, math teacher assistant, LaTeX sanitizer, Google Cloud Startup, Gemini 2.5 Flash, Vertex AI, NCERT math generator">
+        content="Quesper AI, question paper generator, maths question paper making, question paper ai, ai question paper generator, test paper generator, exam paper maker, online test paper generator, cbse question paper generator, ncert question paper maker, math question paper creator, exam builder for teachers, automated test maker, free test paper generator, math test generator, physics question paper generator, class 12 maths question paper generator, math equation ocr, scanned textbook question extractor, handwritten worksheet digitizer, exam blueprint maker, word doc exam exporter, vector math equations, ncert math paper generator, latex to word converter">
+    <meta name="author" content="Kavya Pratap Singh">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quesper.ai/">
+    <meta property="og:title" content="Quesper AI — AI Question Paper Generator & Maths Exam Creator">
+    <meta property="og:description" content="Turn blurry textbook photos, NCERT pages, and handwritten math notes into print-ready exam papers in under 60 seconds. Export editable Word docs with vector math equations.">
+    <meta property="og:image" content="https://quesper.ai/public/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://quesper.ai/">
+    <meta property="twitter:title" content="Quesper AI — AI Question Paper Generator & Maths Exam Creator">
+    <meta property="twitter:description" content="Turn textbook scans and handwritten math notes into Word documents & vector PDFs in under 60 seconds. Ideal for school teachers & tutors.">
+    <meta property="twitter:image" content="https://quesper.ai/public/og-image.jpg">
+
+    <!-- Structured Data JSON-LD Schemas for SEO & AEO (Answer Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://quesper.ai/#website",
+          "url": "https://quesper.ai/",
+          "name": "Quesper AI",
+          "description": "AI Exam Paper Assistant & Maths Question Paper Generator for School Teachers",
+          "publisher": {
+            "@id": "https://quesper.ai/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://quesper.ai/#organization",
+          "name": "Quesper AI",
+          "url": "https://quesper.ai/",
+          "logo": "https://quesper.ai/public/logo.png",
+          "founder": {
+            "@type": "Person",
+            "name": "Kavya Pratap Singh"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://quesper.ai/#software",
+          "name": "Quesper AI",
+          "operatingSystem": "Android",
+          "applicationCategory": "EducationalApplication",
+          "downloadUrl": "https://github.com/KavyaPratap/QuesperAI/releases/download/v1.0.0/quesper_beta.apk",
+          "offers": {
+            "@type": "Offer",
+            "price": "49",
+            "priceCurrency": "INR"
+          },
+          "description": "Hybrid edge-cloud exam generator assistant for educators. Convert NCERT pages, scanned math textbooks, and question sheets into high-fidelity editable Word documents and vector PDFs. Powered by Google Cloud Platform, Gemini 2.5 Flash, and Vertex AI."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://quesper.ai/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Quesper AI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Quesper AI is an advanced, AI-powered question paper generator designed specifically for school teachers, tutors, and educational institutions. It utilizes Google Cloud Vertex AI and Gemini models to convert scanned printed textbooks (including NCERT, Exemplar, etc.), worksheets, and handwritten notes into high-fidelity editable MS Word documents (.docx) and printable vector PDFs, saving educators hours of typing and layout formatting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the AI Question Paper Generator work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our question paper creator app operates in four simple steps: Upload/Scan, AI Extraction (utilizing Vertex AI and Gemini math OCR), Compile & Customize (balancing blueprints and weightages), and Export (downloading editable Word or PDF files)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can it handle complex mathematical equations and LaTeX structures?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Quesper AI is engineered as a state-of-the-art maths question paper making tool. It incorporates a local offline math typesetting compiler (LatexToOmmlConverter) and cloud engines to translate complex math formulas (fractions, integrals, summation, square roots, matrix grids) into native Office Math XML for Microsoft Word."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Quesper AI support CBSE, NCERT, and State Board syllabi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. The app features a pre-indexed NCERT Standard Database covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I import handwritten questions and test papers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our OCR digitizer can capture handwriting. Tutors can scan handwritten sheets, and Quesper's Vertex AI model extracts and sanitizes the equations, turning them into clean digital formats."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a WhatsApp Assistant for generating exams?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our Pro and Value plans include a smart WhatsApp Assistant. Tutors and school teachers can interact with the Quesper bot directly on WhatsApp to retrieve question blueprints, syllabus weightages, and export generated papers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What file formats does the test creator support for export?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Quesper supports double export formats: high-fidelity, print-ready vector PDF files and fully editable Microsoft Word (.docx) documents with native math formats."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Typography Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -800,6 +921,274 @@
                         wisdom should never remain hidden in desk drawers. Snap a photo, scan it, and instantly digitize
                         your academic legacy.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FAQ & KEYWORD RESOURCE HUB (SEO & AEO ENGINE) -->
+    <!-- ========================= -->
+    <section id="resources" class="resources-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="badge">Frequently Asked Questions</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Explore answers to common questions about our AI-powered question paper generator.</p>
+            </div>
+
+            <!-- Hidden SEO & AEO Keyword Directory (For crawler/AI agent indexation only) -->
+            <div class="keyword-explorer-container" style="display: none !important;" aria-hidden="true">
+                <div class="explorer-card-header">
+                    <div class="search-box-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="keyword-search-input" placeholder="Search 100+ syllabus topics and exam keywords (e.g. Integration, Class 12, OCR)...">
+                        <button id="search-clear-btn" class="search-clear-btn" style="display: none;">✕</button>
+                    </div>
+                    <div class="search-stats-info" id="search-stats-info">
+                        Showing all <span class="highlight-text">100+</span> exam generator keywords
+                    </div>
+                </div>
+
+                <div class="browse-toggle-wrapper">
+                    <button id="toggle-keywords-btn" class="browse-toggle-btn">
+                        <span>Browse All 100+ Syllabus Topics & Keywords</span>
+                        <span class="toggle-arrow">▼</span>
+                    </button>
+                </div>
+
+                <div class="keywords-grid-wrapper collapsed" id="keywords-grid-wrapper">
+                    <!-- Category 1: Maths Question Paper Generators -->
+                    <div class="keyword-category-col" data-category="maths">
+                        <h4>Mathematics Exam Maker</h4>
+                        <div class="keyword-chips-list">
+                            <span class="keyword-chip" data-keywords="maths question paper making mathematics exam maker integration derivatives calculus">Calculus Exam Paper Creator</span>
+                            <span class="keyword-chip" data-keywords="algebra matrices determinants quadratic linear algebra maths question paper making">Algebra Question Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="geometry trigonometry coordinate 3d geometry maths question paper making">Geometry Test Maker</span>
+                            <span class="keyword-chip" data-keywords="trigonometric inverse trig probability statistics maths question paper making">Trigonometry Exam Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="probability distributions combinations permutations maths question paper making">Probability Test Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="matrices determinants inverse matrix linear equations maths question paper making">Matrices and Determinants Test Maker</span>
+                            <span class="keyword-chip" data-keywords="coordinate geometry straight lines circles conics maths question paper making">Coordinate Geometry Question Generator</span>
+                            <span class="keyword-chip" data-keywords="integration indefinite definite integrals maths question paper making">Integration & Differentiation Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="quadratic equations roots complex numbers maths question paper making">Quadratic Equations Test Creator</span>
+                            <span class="keyword-chip" data-keywords="relations and functions sets equivalence relation maths question paper making">Relations and Functions Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="linear programming lpp constraints objective function maths question paper making">Linear Programming Question Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="vector algebra dot cross product magnitude maths question paper making">Vector Algebra Exam Generator</span>
+                            <span class="keyword-chip" data-keywords="three dimensional geometry 3d lines planes shortest distance maths question paper making">Three Dimensional Geometry Test Builder</span>
+                            <span class="keyword-chip" data-keywords="continuity and differentiability chain rule mean value maths question paper making">Continuity and Differentiability Exam Maker</span>
+                            <span class="keyword-chip" data-keywords="differential equations order degree homogeneous maths question paper making">Differential Equations Question Bank</span>
+                            <span class="keyword-chip" data-keywords="inverse trigonometric functions principal value maths question paper making">Inverse Trigonometric Functions Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="statistics data handling mean median mode range maths question paper making">Statistics & Data Handling Exam Creator</span>
+                            <span class="keyword-chip" data-keywords="permutations combinations factorial selection arrangement maths question paper making">Permutations & Combinations Test Generator</span>
+                            <span class="keyword-chip" data-keywords="complex numbers iota quadratic roots argand plane maths question paper making">Complex Numbers Question Bank</span>
+                            <span class="keyword-chip" data-keywords="sets sequences arithmetic progression geometric ap gp maths question paper making">Sets & Sequences Test Builder</span>
+                            <span class="keyword-chip" data-keywords="real numbers decimals fractions rational integers arithmetic maths question paper making">Real Numbers & Arithmetic Paper Maker</span>
+                            <span class="keyword-chip" data-keywords="mathematical reasoning logic truth tables conditional negation maths question paper making">Mathematical Reasoning Question Generator</span>
+                            <span class="keyword-chip" data-keywords="binomial theorem expansion coefficients general term maths question paper making">Binomial Theorem Test Paper Creator</span>
+                            <span class="keyword-chip" data-keywords="limits derivatives continuity rate of change tangent normal maths question paper making">Limits and Derivatives Practice Maker</span>
+                            <span class="keyword-chip" data-keywords="mathematical induction proof principle positive integers maths question paper making">Mathematical Induction Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="matrices inversion elementary transformation adjoint equations maths question paper making">Matrices Inversion Question Generator</span>
+                            <span class="keyword-chip" data-keywords="area under the curve definite integration curves regions maths question paper making">Area Under the Curve Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="vectors dot cross scalar triple product projections maths question paper making">Vectors Dot & Cross Product Test Maker</span>
+                            <span class="keyword-chip" data-keywords="straight lines slope intercept point form distance maths question paper making">Straight Lines Question Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="conic sections parabola ellipse hyperbola equations maths question paper making">Conic Sections Exam Creator</span>
+                            <span class="keyword-chip" data-keywords="probability distributions binomial normal random variables maths question paper making">Probability Distributions Test Paper Maker</span>
+                            <span class="keyword-chip" data-keywords="partial fractions algebraic decomposition linear factors maths question paper making">Partial Fractions Question Bank</span>
+                            <span class="keyword-chip" data-keywords="hyperbola ellipse coordinate geometry curves equation maths question paper making">Hyperbola & Ellipse Equation Builder</span>
+                            <span class="keyword-chip" data-keywords="inverse matrix linear equations systems solving method maths question paper making">Inverse Matrix Equation Solver Exam</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Class-Wise Syllabus Generators -->
+                    <div class="keyword-category-col" data-category="classes">
+                        <h4>Class-Wise Generators</h4>
+                        <div class="keyword-chips-list">
+                            <span class="keyword-chip" data-keywords="cbse class 12 maths question paper generator boards physics chemistry">CBSE Class 12 Maths Question Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="cbse class 11 maths test paper builder relations trigonometry equations">CBSE Class 11 Maths Test Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="cbse class 10 mathematics question paper maker quadratic triangles surface area">CBSE Class 10 Mathematics Question Paper Maker</span>
+                            <span class="keyword-chip" data-keywords="cbse class 9 math exam paper generator coordinate circles statistics">CBSE Class 9 Math Exam Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="cbse class 8 math test builder exponents rational linear square roots">CBSE Class 8 Math Test Builder</span>
+                            <span class="keyword-chip" data-keywords="cbse class 7 mathematics question creator integers fractions decimals algebraic">CBSE Class 7 Mathematics Question Creator</span>
+                            <span class="keyword-chip" data-keywords="cbse class 6 math exam sheet maker numbers playing geometry mensuration">CBSE Class 6 Math Exam Sheet Maker</span>
+                            <span class="keyword-chip" data-keywords="class 12 physics test creator electrostatics current magnetism optics">Class 12 Physics Test Creator</span>
+                            <span class="keyword-chip" data-keywords="class 11 physics exam builder kinematics thermodynamics waves vectors">Class 11 Physics Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="class 12 chemistry paper generator electrochemistry kinetics organic coordination">Class 12 Chemistry Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="class 11 chemistry test maker periodic bonding thermodynamics equilibrium s block">Class 11 Chemistry Test Maker</span>
+                            <span class="keyword-chip" data-keywords="class 10 science question paper generator physics chemistry biology exam">Class 10 Science Question Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="class 9 science test paper builder motion matter structure cell">Class 9 Science Test Paper Builder</span>
+                            <span class="keyword-chip" data-keywords="class 8 science exam sheet creator cells force pressure light metals">Class 8 Science Exam Sheet Creator</span>
+                            <span class="keyword-chip" data-keywords="cbse class 12 english exam builder literature grammar composition writing">CBSE Class 12 English Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="cbse class 10 social science paper maker history geography civics economics">CBSE Class 10 Social Science Paper Maker</span>
+                            <span class="keyword-chip" data-keywords="cbse class 12 biology test creator genetics evolution human health reproduction">CBSE Class 12 Biology Test Creator</span>
+                            <span class="keyword-chip" data-keywords="class 11 biology exam generator cell division plant physiology taxonomy">Class 11 Biology Exam Generator</span>
+                            <span class="keyword-chip" data-keywords="icse class 10 maths paper creator selina commercial algebra geometry">ICSE Class 10 Maths Paper Creator</span>
+                            <span class="keyword-chip" data-keywords="isc class 12 mathematics exam builder calculus probability linear">ISC Class 12 Mathematics Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="state board class 12 math test maker local syllabus board exam">State Board Class 12 Math Test Maker</span>
+                            <span class="keyword-chip" data-keywords="jee main maths practice paper creator engineering entrance mock test">JEE Main Maths Practice Paper Creator</span>
+                            <span class="keyword-chip" data-keywords="neet physics question paper generator medical entrance physics problems">NEET Physics Question Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="olympiad maths exam sheet maker school level maths competition">Olympiad Maths Exam Sheet Maker</span>
+                            <span class="keyword-chip" data-keywords="cbse class 10 board exam mock generator revision papers tests school">CBSE Class 10 Board Exam Mock Generator</span>
+                            <span class="keyword-chip" data-keywords="cbse class 12 board exam mock builder sample papers previous year">CBSE Class 12 Board Exam Mock Builder</span>
+                            <span class="keyword-chip" data-keywords="nda mathematics test paper builder defence academy entrance exams">NDA Mathematics Test Paper Builder</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: AI OCR & Exporter Tech -->
+                    <div class="keyword-category-col" data-category="technology">
+                        <h4>AI & OCR Technology</h4>
+                        <div class="keyword-chips-list">
+                            <span class="keyword-chip" data-keywords="ai question paper generator vertex gemini flash engine test generator">AI Question Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="maths question paper making mathematical typing formulas equations builder">Maths Question Paper Making Tool</span>
+                            <span class="keyword-chip" data-keywords="question paper ai smart assistant generator platform settings">Question Paper AI Assistant</span>
+                            <span class="keyword-chip" data-keywords="math equation ocr scanner camera textbook scan handwritten formula">Math Equation OCR Scanner</span>
+                            <span class="keyword-chip" data-keywords="latex to word exam converter formulas office math omml equations docx">LaTeX to Word Exam Converter</span>
+                            <span class="keyword-chip" data-keywords="scanned textbook question extractor camera crop ncert exemplar scanner">Scanned Textbook Question Extractor</span>
+                            <span class="keyword-chip" data-keywords="handwritten math digitizer app notes extraction latex equations converter">Handwritten Math Digitizer App</span>
+                            <span class="keyword-chip" data-keywords="pdf test paper creator vector pdf layouts printable format download">PDF Test Paper Creator</span>
+                            <span class="keyword-chip" data-keywords="word doc exam exporter editable docx format office equation output">Word Doc Exam Exporter</span>
+                            <span class="keyword-chip" data-keywords="vertex ai exam creator google cloud platform serverless fastapi model">Vertex AI Exam Creator</span>
+                            <span class="keyword-chip" data-keywords="gemini flash exam maker multimodal model logic rendering processing">Gemini Flash Exam Maker</span>
+                            <span class="keyword-chip" data-keywords="local latex typesetter android client offline compilation mathml omml">Local LaTeX Typesetter</span>
+                            <span class="keyword-chip" data-keywords="whatsapp exam bot for teachers notification priority cloud push delivery">WhatsApp Exam Bot for Teachers</span>
+                            <span class="keyword-chip" data-keywords="smart blueprint builder tool weightage chapters distributions exam">Smart Blueprint Builder Tool</span>
+                            <span class="keyword-chip" data-keywords="chapter wise weightage exam maker syllabus blueprint parameters layout">Chapter Wise Weightage Exam Maker</span>
+                            <span class="keyword-chip" data-keywords="difficulty level balancing test builder easy medium hard questions select">Difficulty Level Balancing Test Builder</span>
+                            <span class="keyword-chip" data-keywords="automated school examination software high fidelity vector pdf print ready">Automated School Examination Software</span>
+                            <span class="keyword-chip" data-keywords="coaching class test paper maker assessment evaluation test sheet builder">Coaching Class Test Paper Maker</span>
+                            <span class="keyword-chip" data-keywords="teacher productivity software typing clerical admin hours saved tool">Teacher Productivity Software</span>
+                            <span class="keyword-chip" data-keywords="cbse board paper generator marking scheme weightage ncert syllabus">CBSE Board Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="mathematical typing assistant latex compiler math formulas writing tool">Mathematical Typing Assistant</span>
+                            <span class="keyword-chip" data-keywords="ncert exemplar question bank secondary school mock exam sheet set">NCERT Exemplar Question Bank</span>
+                            <span class="keyword-chip" data-keywords="ncert textbook question extractor matrices calculus integration crop tool">NCERT Textbook Question Extractor</span>
+                            <span class="keyword-chip" data-keywords="vector math equation compiler pdf rendering print layout document">Vector Math Equation Compiler</span>
+                            <span class="keyword-chip" data-keywords="pdf exam paper generator high resolution layouts math symbols setting">PDF Exam Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="school exam coordinator software examination blueprint setting tool">School Exam Coordinator Software</span>
+                            <span class="keyword-chip" data-keywords="automated question paper setting exam creator test maker app">Automated Question Paper Setting</span>
+                            <span class="keyword-chip" data-keywords="test paper creator app for android app download beta release">Test Paper Creator App for Android</span>
+                            <span class="keyword-chip" data-keywords="automated test maker online web database question bank builder">Automated Test Maker Online</span>
+                            <span class="keyword-chip" data-keywords="free test paper generator app demo trial pack token credits">Free Test Paper Generator App</span>
+                            <span class="keyword-chip" data-keywords="school test maker tool printable worksheet exam blueprint creator">School Test Maker Tool</span>
+                            <span class="keyword-chip" data-keywords="automated question paper generator math ocr scanned textbook">Automated Question Paper Generator</span>
+                            <span class="keyword-chip" data-keywords="google cloud run fastapi exam engine serverless container scale">Google Cloud Run FastAPI Exam Engine</span>
+                            <span class="keyword-chip" data-keywords="vertex ai multimodal parsing tool extract layout text segmenting">Vertex AI Multimodal Parsing Tool</span>
+                            <span class="keyword-chip" data-keywords="gemini 2.5 flash ocr model math symbols formula recognition">Gemini 2.5 Flash OCR Model</span>
+                            <span class="keyword-chip" data-keywords="latextoommlconverter local library conversion mathml on device offline">LatexToOmmlConverter Local Library</span>
+                            <span class="keyword-chip" data-keywords="ms office math xml exporter word equations native rendering">MS Office Math XML Exporter</span>
+                            <span class="keyword-chip" data-keywords="mathml equation document exporter equations compatibility standard">MathML Equation Document Exporter</span>
+                            <span class="keyword-chip" data-keywords="vector pdf high-fidelity renderer printing lines layouts equations">Vector PDF High-Fidelity Renderer</span>
+                            <span class="keyword-chip" data-keywords="cloud firestore cached exam database questions recall storage fast">Cloud Firestore Cached Exam Database</span>
+                            <span class="keyword-chip" data-keywords="firebase storage textbook uploads secure image bucket assets">Firebase Storage Textbook Uploads</span>
+                            <span class="keyword-chip" data-keywords="school assessment management software tests grading templates school">School Assessment Management Software</span>
+                            <span class="keyword-chip" data-keywords="automated evaluation key generator solution sheet marking answers">Automated Evaluation Key Generator</span>
+                            <span class="keyword-chip" data-keywords="high school math exam assistant papers creator maths teacher help">High School Math Exam Assistant</span>
+                            <span class="keyword-chip" data-keywords="tutor test preparation software coaching test maker mock creator">Tutor Test Preparation Software</span>
+                            <span class="keyword-chip" data-keywords="ncert solution extractor app solved equations textbook crop">NCERT Solution Extractor App</span>
+                            <span class="keyword-chip" data-keywords="offline mobile math typesetter android latex builder formula converter">Offline Mobile Math Typesetter</span>
+                            <span class="keyword-chip" data-keywords="latex formula sanitizer tool brackets cleanup normalization">LaTeX Formula Sanitizer Tool</span>
+                            <span class="keyword-chip" data-keywords="classroom quiz generator software rapid questionnaire setter tools">Classroom Quiz Generator Software</span>
+                            <span class="keyword-chip" data-keywords="cbse marksheet blueprint maker layout design marks spacing formatting">CBSE Marksheet Blueprint Maker</span>
+                            <span class="keyword-chip" data-keywords="automated grading exam builder keys solutions print downloads">Automated Grading Exam Builder</span>
+                            <span class="keyword-chip" data-keywords="digital exam sheet composer select organize drag layout tools">Digital Exam Sheet Composer</span>
+                            <span class="keyword-chip" data-keywords="mathematics classroom admin tool teachers management dashboard software">Mathematics Classroom Admin Tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Mock Search Results (initially hidden, interactive!) -->
+                <div class="search-results-overlay" id="search-results-overlay" style="display: none;">
+                    <h5>NCERT/CBSE Database Search Results</h5>
+                    <div class="search-results-list" id="search-results-list">
+                        <!-- Filled dynamically by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beautiful Accordion FAQ Area -->
+            <div class="faq-accordion-wrapper">
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>What is Quesper AI?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Quesper AI is an advanced, AI-powered question paper generator designed specifically for school teachers, tutors, and educational institutions. It utilizes Google Cloud Vertex AI and Gemini models to convert scanned printed textbooks (including NCERT, Exemplar, etc.), worksheets, and handwritten notes into high-fidelity editable MS Word documents (.docx) and printable vector PDFs, saving educators hours of typing and layout formatting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>How does the AI Question Paper Generator work?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our question paper creator app operates in four simple steps:</p>
+                        <ul>
+                            <li><strong>Upload or Scan:</strong> Capture a photo of any exam book or NCERT textbook page using the Android app.</li>
+                            <li><strong>AI Extraction:</strong> The built-in Math OCR engine detects and parses mathematical equations, algebra matrices, calculus symbols, and geometry texts with 99.8% LaTeX accuracy.</li>
+                            <li><strong>Compile & Customize:</strong> Select chapter weights, difficulty levels, and total marks using our blueprint builder.</li>
+                            <li><strong>Export:</strong> Instantly download the formatted paper in Microsoft Word or PDF formats.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>Can it handle complex mathematical equations and LaTeX structures?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Quesper AI is engineered as a state-of-the-art maths question paper making tool. It incorporates a local offline math typesetting compiler (<code>LatexToOmmlConverter</code>) and cloud engines to translate complex math formulas (fractions, integrals, summation, square roots, matrix grids) into native Office Math XML for Microsoft Word. You can edit every equation natively inside MS Word.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>Does Quesper AI support CBSE, NCERT, and State Board syllabi?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. The app features a pre-indexed NCERT Standard Database covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>How does Agent Engine Optimization (AEO) and AI search visibility help educators find Quesper?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For search agents and Answer Engines like OpenAI ChatGPT, Anthropic Claude, Perplexity, and Google Gemini, we provide rich structured JSON-LD schemas and semantic markup. If you ask an AI "what is the best app for maths question paper making" or "how to generate question papers from NCERT textbooks", Quesper AI appears at the top of recommendations because its indexable metadata is fully optimized for AI agents and LLM crawlers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>Can I import handwritten questions and test papers?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our OCR digitizer can capture handwriting. Tutors can scan handwritten sheets, and Quesper's Vertex AI model extracts and sanitizes the equations, turning them into clean digital formats.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>Is there a WhatsApp Assistant for generating exams?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our Pro and Value plans include a smart WhatsApp Assistant. Tutors and school teachers can interact with the Quesper bot directly on WhatsApp to retrieve question blueprints, syllabus weightages, and export generated papers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <h3>What file formats does the test creator support for export?</h3>
+                        <span class="faq-icon-indicator">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Quesper supports double export formats: high-fidelity, print-ready vector PDF files and fully editable Microsoft Word (.docx) documents with native math formats.</p>
+                    </div>
                 </div>
             </div>
         </div>
