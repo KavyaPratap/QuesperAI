@@ -242,6 +242,25 @@ hr.card-divider {
     box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
 }
 
+.logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
 .logo-accent {
     color: var(--accent-primary);
 }
@@ -1074,7 +1093,7 @@ hr.card-divider {
 .bento-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     gap: 24px;
     margin-top: 50px;
 }
@@ -1202,6 +1221,11 @@ hr.card-divider {
 .card-ncert {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
+}
+
+.card-school {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
 }
 
 .ncert-content {
@@ -1520,63 +1544,185 @@ hr.card-divider {
 }
 
 /* =======================================================
-   TESTIMONIALS
+   BETA SECTION
 ======================================================= */
-.testimonial-section {
+.beta-section {
     padding: 120px 0;
     border-top: 1px solid var(--border-subtle);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.015) 0%, transparent 65%);
 }
 
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.testimonial-card {
-    padding: 36px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.02);
+.beta-form-container {
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 50px;
+    border-radius: var(--radius-xl);
+    background: rgba(26, 26, 34, 0.6);
     border: 1px solid var(--border-subtle);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a glowing effect to the form card */
+.beta-form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 107, 53, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.beta-form {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    gap: 30px;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 107, 53, 0.15);
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
-.stars {
-    color: #FFBD2E;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.testimonial-card p {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
-    font-style: italic;
-    flex-grow: 1;
-}
-
-.reviewer-name {
+.form-group label {
     font-family: var(--font-heading);
+    font-size: 0.95rem;
     font-weight: 700;
-    font-size: 1.1rem;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    background: rgba(15, 15, 19, 0.6);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent-primary);
+    background: rgba(255, 107, 53, 0.02);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.form-help {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+/* Style select dropdown arrow */
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A7A7B5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    padding-right: 48px;
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: var(--bg-card);
     color: var(--text-primary);
 }
 
-.reviewer-role {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    margin-top: -15px;
+.beta-submit-btn {
+    align-self: center;
+    min-width: 260px;
+    padding: 16px 36px;
+    border-radius: 99px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, #E0533C 100%);
+    border: none;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+.beta-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.35);
+}
+
+.beta-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-status-message {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-top: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+.form-status-message.success {
+    background: rgba(0, 255, 102, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    color: #CCFFDD;
+}
+
+.form-status-message.success h4 {
+    margin-bottom: 8px;
+    color: #00FF66;
+}
+
+.form-status-message.error {
+    background: rgba(255, 59, 48, 0.05);
+    border: 1px solid rgba(255, 59, 48, 0.2);
+    color: #FFDDDD;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .beta-form-container {
+        padding: 30px 20px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .beta-submit-btn {
+        width: 100%;
+    }
 }
 
 /* =======================================================
@@ -2104,9 +2250,6 @@ hr.card-divider {
         gap: 20px;
     }
 
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
 
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -2171,7 +2314,7 @@ hr.card-divider {
         margin-top: 40px;
     }
 
-    .card-ocr, .card-export, .card-ncert {
+    .card-ocr, .card-export, .card-ncert, .card-school {
         grid-column: auto;
         grid-row: auto;
     }

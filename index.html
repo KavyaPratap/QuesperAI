@@ -12,6 +12,10 @@
         content="Quesper AI, question paper generator, maths question paper making, question paper ai, ai question paper generator, test paper generator, exam paper maker, online test paper generator, cbse question paper generator, ncert question paper maker, math question paper creator, exam builder for teachers, automated test maker, free test paper generator, math test generator, physics question paper generator, class 12 maths question paper generator, math equation ocr, scanned textbook question extractor, handwritten worksheet digitizer, exam blueprint maker, word doc exam exporter, vector math equations, ncert math paper generator, latex to word converter">
     <meta name="author" content="Kavya Pratap Singh">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://quesper.ai/">
@@ -99,7 +103,7 @@
               "name": "Does Quesper AI support CBSE, NCERT, and State Board syllabi?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. The app features a pre-indexed NCERT Standard Database covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word."
+                "text": "Absolutely. The app features a pre-indexed School Library covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word."
               }
             },
             {
@@ -151,8 +155,8 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <div class="logo-icon">Q</div>
-                <span>Quesper<span class="logo-accent">.ai</span></span>
+                <img src="public/logo.png" alt="Quesper Logo" class="logo-img">
+                <span>Quesper</span>
             </a>
 
             <ul class="nav-links">
@@ -472,24 +476,42 @@
                     </div>
                 </div>
 
-                <!-- Card 3: NCERT Question Library (Bottom Wide) -->
+                <!-- Card 3: School Library (Bottom Wide) -->
                 <div class="bento-card card-ncert">
                     <div class="bento-card-bg-glow hero-glow"></div>
                     <div class="bento-card-header">
-                        <span class="bento-badge">📚 CHAPTER BANK</span>
-                        <h3>NCERT Standard Database</h3>
+                        <span class="bento-badge">📚 SCHOOL LIBRARY</span>
+                        <h3>School Library</h3>
                     </div>
                     <div class="ncert-content">
                         <div class="ncert-text">
-                            <p>Instantly browse standard questions from NCERT Textbooks and NCERT Exemplar Books. Covers
-                                CBSE Class 6 to 12 mathematics, physics, and chemistry. Select by chapter, topic, or
-                                difficulty level with one click.</p>
+                            <p>Instantly browse standard questions from CBSE, NCERT Textbooks, and reference books. Covers Class 6 to 12 mathematics, physics, and chemistry. Select by chapter, topic, or difficulty level with one click.</p>
                         </div>
                         <div class="ncert-visual">
                             <div class="ncert-chip">Class 10 — Quadratic Equations</div>
                             <div class="ncert-chip">Class 9 — Coordinate Geometry</div>
                             <div class="ncert-chip">Class 12 — Integrals</div>
                             <div class="ncert-chip">Class 11 — Trigonometric Functions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: School Customization (Bottom Wide) -->
+                <div class="bento-card card-school">
+                    <div class="bento-card-bg-glow hero-glow"></div>
+                    <div class="bento-card-header">
+                        <span class="bento-badge">🏫 SCHOOL BRANDING</span>
+                        <h3>School Customization</h3>
+                    </div>
+                    <div class="ncert-content">
+                        <div class="ncert-text">
+                            <p>Enable teachers to upload their school logo to automatically serve as a watermark or official header on generated PDFs. Create personalized exam layouts that look professional and custom-tailored to your institution.</p>
+                        </div>
+                        <div class="ncert-visual">
+                            <div class="ncert-chip">Logo Watermark</div>
+                            <div class="ncert-chip">Custom Header Layout</div>
+                            <div class="ncert-chip">Official Exam Format</div>
+                            <div class="ncert-chip">School Personalization</div>
                         </div>
                     </div>
                 </div>
@@ -629,8 +651,8 @@
                         <span class="gallery-label">Dashboard</span>
                     </div>
                     <div class="gallery-card" data-index="2">
-                        <img src="public/classandsubject.jpeg" alt="Question Bank Screen">
-                        <span class="gallery-label">Question Bank</span>
+                        <img src="public/classandsubject.jpeg" alt="School Library Screen">
+                        <span class="gallery-label">School Library</span>
                     </div>
                     <div class="gallery-card" data-index="3">
                         <img src="public/ss4.jpg" alt="Question Picker Screen">
@@ -680,9 +702,8 @@
                                     autoplay loop muted playsinline></video>
                             </div>
                         </div>
-                        <h3 class="demo-title">BYOB Book Scanner</h3>
-                        <p class="demo-desc">Leverage Vertex AI to crop and segment mathematical formulas from printed
-                            page photos, preparing clean LaTeX outputs.</p>
+                        <h3 class="demo-title">Handwriting Scanner</h3>
+                        <p class="demo-desc">Leverage Vertex AI to crop and segment mathematical formulas from handwritten sheets and printed page photos, preparing clean LaTeX outputs.</p>
                     </div>
                     <div class="demo-card">
                         <div class="phone-frame demo-phone">
@@ -692,9 +713,8 @@
                                     autoplay loop muted playsinline></video>
                             </div>
                         </div>
-                        <h3 class="demo-title">Handwritten Digitizer</h3>
-                        <p class="demo-desc">Snap snapshots of classroom worksheets or written sheets. Automatically
-                            extracts coordinates and sanitizes raw equations.</p>
+                        <h3 class="demo-title">Quesper-AI</h3>
+                        <p class="demo-desc">Enables you to generate questions out of old question papers, books, worksheets, and reference guides using advanced Gemini-driven extraction.</p>
                     </div>
                 </div>
             </div>
@@ -702,39 +722,51 @@
     </section>
 
     <!-- ========================= -->
-    <!-- TESTIMONIALS -->
+    <!-- JOIN BETA PROGRAM -->
     <!-- ========================= -->
-    <section class="testimonial-section">
+    <section class="beta-section" id="beta">
         <div class="section-container">
             <div class="section-header">
-                <div class="badge">Testimonials</div>
-                <h2 class="section-title">Endorsed By Mathematics Educators</h2>
+                <div class="badge">Join Beta Program</div>
+                <h2 class="section-title">Join Beta Program by Filling This Form</h2>
+                <p class="section-description">Register your details below to get whitelisted for the Google Play internal testing link.</p>
             </div>
 
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Quesper saves me hours of typing every week. I just scan the NCERT page, tap the problems I
-                        need, and export directly to Word."</p>
-                    <span class="reviewer-name">Dr. Rajesh Kumar</span>
-                    <span class="reviewer-role">Senior Maths Teacher, Delhi</span>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"The math OCR is incredible. Even fractions, complex matrix grids, and integration equations are
-                        scanned and compiled into LaTeX correctly."</p>
-                    <span class="reviewer-name">Sarah D'Souza</span>
-                    <span class="reviewer-role">Founder, Apex Coaching Academy</span>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"I was skeptical about editable Word exports, but it generates native Microsoft Office Equations.
-                        I can edit formulas directly in Word!"</p>
-                    <span class="reviewer-name">Amit Sharma</span>
-                    <span class="reviewer-role">TGT Mathematics Teacher</span>
-                </div>
+            <div class="beta-form-container">
+                <form id="beta-signup-form" class="beta-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="beta-name">Full Name</label>
+                            <input type="text" id="beta-name" name="name" placeholder="Dr. Rajesh Kumar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="beta-email">Google Play Store Email</label>
+                            <input type="email" id="beta-email" name="email" placeholder="rajesh.kumar@gmail.com" required>
+                            <span class="form-help">Must be the email linked to your Google Play Store account so we can whitelist you.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="beta-institution">Institution / School / Coaching</label>
+                            <input type="text" id="beta-institution" name="institution" placeholder="Delhi Public School" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="beta-role">Your Role</label>
+                            <select id="beta-role" name="role" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="School Teacher">School Teacher</option>
+                                <option value="Coaching Owner">Coaching Owner / Tutor</option>
+                                <option value="Exam Coordinator">Exam Coordinator</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="beta-submit-btn" id="beta-submit-btn">
+                        <span>Submit & Request Access</span>
+                    </button>
+                    
+                    <div class="form-status-message" id="form-status-message" style="display: none;"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -780,8 +812,8 @@
                         <span class="currency">₹</span><span class="amount">119</span>
                     </div>
                     <span class="price-framing"
-                        style="color: var(--text-primary); border-color: var(--accent-primary); background: rgba(255, 107, 53, 0.12);">🥟
-                        Equivalent to a plate of samosas</span>
+                        style="color: var(--text-primary); border-color: var(--accent-primary); background: rgba(255, 107, 53, 0.12);">☕
+                        Equivalent to a cup of premium coffee</span>
                     <p class="plan-desc">For full-time school teachers and active academies</p>
                     <hr class="card-divider">
                     <ul class="plan-features">
@@ -802,7 +834,7 @@
                     <div class="price-display">
                         <span class="currency">₹</span><span class="amount">79</span>
                     </div>
-                    <span class="price-framing">🥪 Equivalent to a small evening snack</span>
+                    <span class="price-framing">🥪 Equivalent to a fresh grilled sandwich</span>
                     <p class="plan-desc">For growing tutors managing multiple sets</p>
                     <hr class="card-divider">
                     <ul class="plan-features">
@@ -1096,7 +1128,7 @@
 
                 <!-- Custom Mock Search Results (initially hidden, interactive!) -->
                 <div class="search-results-overlay" id="search-results-overlay" style="display: none;">
-                    <h5>NCERT/CBSE Database Search Results</h5>
+                    <h5>School Library Search Results</h5>
                     <div class="search-results-list" id="search-results-list">
                         <!-- Filled dynamically by JavaScript -->
                     </div>
@@ -1147,7 +1179,7 @@
                         <span class="faq-icon-indicator">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. The app features a pre-indexed NCERT Standard Database covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word.</p>
+                        <p>Absolutely. The app features a pre-indexed School Library covering Class 6 to Class 12 mathematics, physics, and chemistry. Teachers can browse CBSE NCERT syllabus questions, select them by topic or difficulty (Easy, Medium, Hard), and build test papers without manually typing a single word.</p>
                     </div>
                 </div>
 
@@ -1200,7 +1232,10 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3>Quesper<span class="logo-accent">.ai</span></h3>
+                <div class="footer-logo">
+                    <img src="public/logo.png" alt="Quesper Logo" class="logo-img">
+                    <span>Quesper</span>
+                </div>
                 <p>AI-Powered Exam Paper Assistant for Mathematics and Science Educators.</p>
                 <div class="gcp-badge">Official GCP Startup Partner</div>
             </div>
