@@ -40,4 +40,4 @@ Allow: /
 User-agent: Cohere-ai
 Allow: /
 
-Sitemap: https://quesper.ai/sitemap.xml
+Sitemap: https://quesper.in/sitemap.xml
