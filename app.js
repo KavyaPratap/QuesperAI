@@ -831,60 +831,6 @@ function resetSearch() {
 /* =======================================================
    BETA SIGNUP FORM HANDLER
    ======================================================= */
-const betaForm = document.getElementById("beta-signup-form");
-const formStatus = document.getElementById("form-status-message");
-
-if (betaForm) {
-    betaForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const submitBtn = document.getElementById("beta-submit-btn");
-        const submitBtnText = submitBtn.querySelector("span");
-        
-        // Disable button & show spinner/text
-        submitBtn.disabled = true;
-        submitBtnText.textContent = "Requesting Whitelist...";
-        
-        const formData = {
-            name: document.getElementById("beta-name").value,
-            email: document.getElementById("beta-email").value,
-            institution: document.getElementById("beta-institution").value,
-            role: document.getElementById("beta-role").value
-        };
-
-        try {
-            // Save application in localStorage for visual confirmation
-            const registeredUsers = JSON.parse(localStorage.getItem("quesper_beta_users") || "[]");
-            registeredUsers.push({ ...formData, timestamp: new Date().toISOString() });
-            localStorage.setItem("quesper_beta_users", JSON.stringify(registeredUsers));
-
-            // Show a highly polished inline success card matching design system
-            setTimeout(() => {
-                formStatus.style.display = "block";
-                formStatus.className = "form-status-message success";
-                formStatus.innerHTML = `
-                    <h4>🎉 Whitelist Application Registered!</h4>
-                    <p>Thank you, <strong>${formData.name}</strong>. We have registered your Google Play email <strong>${formData.email}</strong>. We will add you to our Google Developer Console internal testers list and email you the official Play Store testing link shortly.</p>
-                `;
-                
-                betaForm.reset();
-                submitBtn.disabled = false;
-                submitBtnText.textContent = "Submit & Request Access";
-                
-                // Refresh ScrollTrigger as form height changed
-                if (typeof ScrollTrigger !== 'undefined') {
-                    ScrollTrigger.refresh();
-                }
-            }, 1000);
-            
-        } catch (error) {
-            console.error("Error submitting beta form:", error);
-            formStatus.style.display = "block";
-            formStatus.className = "form-status-message error";
-            formStatus.textContent = "Something went wrong. Please try again or email founder@quesper.in directly.";
-            submitBtn.disabled = false;
-            submitBtnText.textContent = "Submit & Request Access";
-        }
-    });
-}
+// Form replaced with direct Google Forms link in index.html
 
 
