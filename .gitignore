@@ -4,3 +4,7 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Large Assets
+quesper_beta.apk
+public/*.mp4
