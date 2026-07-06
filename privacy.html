@@ -46,7 +46,7 @@
       <p>To provide exam paper compilation and AI sanitization features, we collect the following categories of information:</p>
       <ul>
         <li><strong>Account Registration Data:</strong> Account information synced via Google Sign-In (such as name and email address) on Firebase Authentication.</li>
-        <li><strong>Camera & Textbook Scans:</strong> Images of textbook pages or written sheets uploaded by users to compile questions. These are stored on secure Google Cloud Storage buckets.</li>
+        <li><strong>Camera & Textbook Scans (Transient Processing):</strong> Images of textbook pages or written sheets uploaded by users to compile questions are processed transiently in-memory for AI text extraction. We do not store, host, or save user-uploaded images, videos, or media files on our servers.</li>
         <li><strong>User-Configured Data:</strong> Generated exam papers, metadata selections, chapter configurations, and local credit usage balances stored in Firebase Firestore.</li>
       </ul>
     </div>
@@ -55,7 +55,7 @@
       <h2>2. How We Process Your Data (Google Cloud Services)</h2>
       <p>Our application operates using a hybrid edge-cloud architecture powered by Google Cloud Platform (GCP). Reviewers and users can note the following data processing practices:</p>
       <ul>
-        <li><strong>AI Analysis (Vertex AI):</strong> Images of question sheets are processed via the Gemini 2.5 Flash API hosted on Vertex AI to perform optical character recognition (OCR) and layout translation. Uploaded scans are never used for base model training.</li>
+        <li><strong>AI Analysis (Vertex AI):</strong> Images of question sheets are processed via the Gemini 2.5 Flash API hosted on Vertex AI to perform optical character recognition (OCR) and layout translation. Uploaded scans are processed transiently in-memory and are never stored or used for base model training.</li>
         <li><strong>Serverless Compute (Google Cloud Run):</strong> Web requests and question parsing are handled dynamically by Cloud Run microservices using encrypted channels.</li>
         <li><strong>Automatic File Deletion:</strong> Any temporary PDFs or Word documents compiled by our engines are stored in Cloud Storage buckets with automatic lifecycle policies that permanently delete files after 24 hours.</li>
       </ul>
@@ -74,7 +74,7 @@
 
     <div class="legal-section">
       <h2>5. Contact & Data Rights</h2>
-      <p>Under educational privacy frameworks, you retain full rights to request access to, correction of, or deletion of your stored textbook scans or account profiles. For all data requests and inquiries, contact us at:</p>
+      <p>Under educational privacy frameworks, you retain full rights to request access to, correction of, or deletion of your account profiles and saved exam papers. For all data requests and inquiries, contact us at:</p>
       <p class="footer-email">Email: founder@quesper.in</p>
     </div>
   </div>
